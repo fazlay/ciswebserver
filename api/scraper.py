@@ -66,13 +66,11 @@ def send_requests(url, headers="", cookies="", params="", request_type="GET", re
         'http': 'http://scraperapi.country_code=us:43d61359f1031da410e86a26631ae299@proxy-server.scraperapi.com:8001',
         'https': 'http://scraperapi.country_code=us:43d61359f1031da410e86a26631ae299@proxy-server.scraperapi.com:8001',
     }
+    # proxies=proxies,verify=False
     if request_type == "POST":
-        response = requests.post(url, headers=headers,proxies=proxies,verify=False,
-                                 cookies=cookies, params=params,data=data)
-
+        response = requests.post(url, headers=headers,cookies=cookies, params=params,data=data)
     else:
-        response = requests.get(url, headers=headers,proxies=proxies,verify=False,
-                                cookies=cookies, params=params)
+        response = requests.get(url, headers=headers,cookies=cookies, params=params)
 
     if response_type == "json":
         return response.json(), response
