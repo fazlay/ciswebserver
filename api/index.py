@@ -1,5 +1,5 @@
 from flask import Flask
-
+from scraper import scraper 
 app = Flask(__name__)
 
 @app.route('/')
